@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $errors = [];
+        $errors = ['tab' => null];
         $posts = Posts::orderBy('id', 'desc')->get();
         $orders = Orders::orderBy('id', 'desc')->get();
         
