@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Posts;
 use App\Orders;
-use App\SiteTitle;
 
 class HomeController extends Controller
 {
@@ -26,12 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $errors = ['tab' => null];
         $posts = Posts::orderBy('id', 'desc')->get();
         $orders = Orders::orderBy('id', 'desc')->get();
         
         return view('home', ['posts' => $posts],
-                            ['orders' => $orders])->with('errors', $errors);
+                            ['orders' => $orders]);
                             
     }
 }
