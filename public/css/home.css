@@ -1,0 +1,48 @@
+body {
+    font-family: 'Lato';
+}
+.fa-btn {
+    margin-right: 6px;
+}
+.center {
+  margin: 0 auto;
+}
+.form {
+  max-width: 500px;
+}
+
+.tabs .tab a{
+    color:#000;
+} /*Black color to the text*/
+
+.tabs .tab a:hover {
+    background-color:#eee;
+    color:#000;
+} /*Text color on hover*/
+
+.tabs .tab a.active {
+    background-color:#3949ab;
+    color:#eee;
+} /*Background and text color when a tab is active*/
+
+.tabs .indicator {
+    background-color:#3949ab;
+} /*Color of underline*/
+
+.create-post span{
+    color: red;
+}
+
+fieldset{
+    margin: 25px auto;
+    padding: 25px;
+    border: 0px;
+}
+
+.orders-table select{
+    height: 2rem !important;
+}
+
+.search .input-field{
+    width: 55% !important;
+}

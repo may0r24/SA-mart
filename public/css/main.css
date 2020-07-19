@@ -1,0 +1,53 @@
+
+.section-2{
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+fieldset{
+  border: 0px;
+}
+
+body {
+  font-family: 'Lato';
+}
+
+ /* label focus color */
+ .input-field input:focus + label {
+  color: indigo !important;
+}
+/* label focus color */
+.input-field textarea:focus + label {
+  color: indigo !important;
+}
+/* label underline focus color */
+.input-field input:focus {
+  border-bottom: 2px solid indigo !important;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* label underline focus color */
+.input-field textarea:focus {
+  border-bottom: 2px solid indigo !important;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: indigo;
+}
+
+button{
+  margin-top: 30px;
+}
+
+.create-order span{
+  color: red;
+}
+
+.success{
+  color: green;
+}
+
+.error{
+  color: red;
+}
