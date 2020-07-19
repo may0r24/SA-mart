@@ -12,8 +12,8 @@
             <div class="col s12">
                 <ul class="tabs">
                     <li class="tab col s3"><a href="#post">Post</a></li>
-                    <li class="tab col s3"><a class="{{ session('errors')['tab'] != null ? '' : 'active' }}" href="#orders">Orders</a></li>
-                    <li class="tab col s3"><a class="{{ session('errors')['tab'] ?? '' }}" href="#settings">Settings</a></li>
+                    <li class="tab col s3"><a class="active" href="#orders">Orders</a></li>
+                    <li class="tab col s3"><a href="#settings">Settings</a></li>
                 </ul>
             </div>
         <div id="post" class="container col s12">
