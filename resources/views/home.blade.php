@@ -162,106 +162,103 @@
                 </div>
             </div>
         <div id="settings" class="col s12">
-            <div class="container">
+            <div class="container settings">
                 <div>
-                    <table class="responsive-table">
-                        <thead>
-                            <tr>
-                                <th>Facebook</th>
-                                <th>Twitter</th>
-                                <th>Instagram</th>
-                                <th>LinkedIn</th>
-                                <th>Phone Line 1</th>
-                                <th>Phone Line 2</th>
-                                <th>Phone Line 3</th>
-                                <th>About line</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
+                    @foreach ($abouts as $about)
+                    <form action="{{ route('update.abouts', $about->id) }} " method="POST">
+                    @endforeach
+                        @csrf
+                        <table class="responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Facebook</th>
+                                    <th>Twitter</th>
+                                    <th>Instagram</th>
+                                    <th>LinkedIn</th>
+                                    <th>Phone Line 1</th>
+                                    <th>Phone Line 2</th>
+                                    <th>Phone Line 3</th>
+                                </tr>
+                            </thead>
+                            @foreach($abouts as $about)
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="fb" name="facebook_link" type="text" class="validate" value="{{ htmlspecialchars(session('about')->facebook_link ?? $about->facebook_link) }}">
+                                                    <label for="fb">Facebook</label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="tw" name="twitter_link" type="text" class="validate" value="{{ htmlspecialchars(session('about')->twitter_link ?? $about->twitter_link) }}">
+                                                    <label for="tw">Twitter</label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="ig" name="instagram_link" type="text" class="validate" value="{{ htmlspecialchars(session('about')->instagram_link ?? $about->instagram_link) }}">
+                                                    <label for="ig">Instagram</label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="li" name="linkedin_link" type="text" class="validate" value="{{ htmlspecialchars(session('about')->linkedin_link ?? $about->linkedin_link) }}">
+                                                    <label for="li">LinkedIn</label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="ph1" name="phone_line_1" type="text" class="validate" value="{{ htmlspecialchars(session('about')->phone_line_1 ?? $about->phone_line_1) }}">
+                                                    <label for="ph1">Phone Line 1</label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="ph2" name="phone_line_2" type="text" class="validate" value="{{ htmlspecialchars(session('about')->phone_line_2 ?? $about->phone_line_2) }}">
+                                                    <label for="ph2">Phone Line 2</label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="ph3" name="phone_line_3" type="text" class="validate" value="{{ htmlspecialchars(session('about')->phone_line_3 ?? $about->phone_line_3) }}">
+                                                    <label for="ph3">Phone Line 3</label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            @endforeach
+                        </table>
                         @foreach($abouts as $about)
-                            <form action="{{ route('update.abouts', $about->id) }} " method="POST">
-                                @csrf
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input id="fb" name="facebook_link" type="text" class="validate" value="{{ htmlspecialchars(session('about')->facebook_link ?? $about->facebook_link) }}">
-                                                        <label for="fb">Facebook</label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input id="tw" name="twitter_link" type="text" class="validate" value="{{ htmlspecialchars(session('about')->twitter_link ?? $about->twitter_link) }}">
-                                                        <label for="tw">Twitter</label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input id="ig" name="instagram_link" type="text" class="validate" value="{{ htmlspecialchars(session('about')->instagram_link ?? $about->instagram_link) }}">
-                                                        <label for="ig">Instagram</label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input id="li" name="linkedin_link" type="text" class="validate" value="{{ htmlspecialchars(session('about')->linkedin_link ?? $about->linkedin_link) }}">
-                                                        <label for="li">LinkedIn</label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input id="ph1" name="phone_line_1" type="text" class="validate" value="{{ htmlspecialchars(session('about')->phone_line_1 ?? $about->phone_line_1) }}">
-                                                        <label for="ph1">Phone Line 1</label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input id="ph2" name="phone_line_2" type="text" class="validate" value="{{ htmlspecialchars(session('about')->phone_line_2 ?? $about->phone_line_2) }}">
-                                                        <label for="ph2">Phone Line 2</label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input id="ph3" name="phone_line_3" type="text" class="validate" value="{{ htmlspecialchars(session('about')->phone_line_3 ?? $about->phone_line_3) }}">
-                                                        <label for="ph3">Phone Line 3</label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <textarea id="about" class="materialize-textarea" name="about_line">
-                                                            {{htmlspecialchars(session('about')->about_line ?? $about->about_line)}}
-                                                        </textarea>
-                                                        <label for="about">About Line</label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="row">
-                                                    <button class="btn waves-effect waves-light indigo darken-4" type="submit" name="action">Update
-                                                        <i class="material-icons right">update</i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    
-                            </form>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="about" class="materialize-textarea" name="about_line">
+                                        {{htmlspecialchars(session('about')->about_line ?? $about->about_line)}}
+                                    </textarea>
+                                    <label for="about">About Line</label>
+                                </div>
+                            </div>
+                            <div class="row right">
+                                <button class="btn waves-effect waves-light indigo darken-4" type="submit" name="action">Update
+                                    <i class="material-icons right">update</i>
+                                </button>
+                            </div>
                         @endforeach
-                    </table>
+                    </form>
                 </div>
             </div>
         </div>

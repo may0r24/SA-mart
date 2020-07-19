@@ -26,11 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $errors = [];
         $posts = Posts::orderBy('id', 'desc')->get();
         $orders = Orders::orderBy('id', 'desc')->get();
         
         return view('home', ['posts' => $posts],
-                            ['orders' => $orders]);
+                            ['orders' => $orders])->with('errors', $errors);
                             
     }
 }
